@@ -37,6 +37,7 @@ body {
 
 #to-do-list {
 	width: 380px; height: 600px;
+
 }
 
 #completed {
@@ -50,4 +51,9 @@ body {
 	background-color: cornflowerblue;
 	border-radius: 10px;
 	margin-bottom: 10px;
+    
+}
+
+ul{
+    list-style-type: none;
 }
