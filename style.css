@@ -27,7 +27,7 @@ body {
 	color: white;
 }
 
-#to-do-list, #completed {
+#to-do-list-container, #completed-container {
 	display: inline-block;
 	margin-left: 10px;
 	margin-top: 10px;
@@ -35,25 +35,52 @@ body {
 	overflow: hidden;
 }
 
-#to-do-list {
+#to-do-list-container {
 	width: 380px; height: 600px;
 
 }
 
-#completed {
+#completed-container {
 	width: 380px; height: 600px;
 }
 
-.to-do-item {
-	color: white;
-	height: 80px; width: 360px;
-	border: 1px solid grey;
-	background-color: cornflowerblue;
-	border-radius: 10px;
-	margin-bottom: 10px;
-    
-}
 
 ul{
     list-style-type: none;
+	margin: 0;
+    padding: 0;
+}
+
+
+li
+{
+	background-color: aquamarine;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 20px;
+
+}
+li:nth-child(2n){
+	background: #f7f7f7;
+}
+
+
+
+
+.items .tooltiptext {
+	visibility: hidden;
+	width: 90px;
+	background-color: black;
+	opacity: 30%;
+	color: #fff;
+	text-align: center;
+	border-radius: 0.5px;
+	
+	position: absolute;
+	z-index: 1;
+}
+
+.items:hover .tooltiptext
+{
+	visibility: visible;
 }
