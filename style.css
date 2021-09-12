@@ -37,16 +37,17 @@ body {
 
 #to-do-list-container {
 	width: 380px; height: 600px;
+	border-style: solid;
 
 }
 
 #completed-container {
 	width: 380px; height: 600px;
+	border-style: solid;
 }
 
 
 ul{
-    list-style-type: none;
 	margin: 0;
     padding: 0;
 }
@@ -58,10 +59,7 @@ li
 	height: 40px;
 	line-height: 40px;
 	margin-bottom: 20px;
-
-}
-li:nth-child(2n){
-	background: #f7f7f7;
+	list-style-type: none;
 }
 
 
