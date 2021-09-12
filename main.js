@@ -14,8 +14,6 @@ const drag = () => {
     revert: "invalid",
     cursor: "grabbing",
     helper: "clone"
-
-
   });
   
 }
@@ -25,18 +23,14 @@ const dropped = () => {
   $('#completed-container').droppable({
     tolerance: 'pointer',
     accept: '#firstlist .items',
-    activeClass: "ui-state-active",
-    hoverClass: "ui-state-hover",
     drop: function(event,ui)
     {
-      let droppable = $(this);
+      let droppable = $(this).children("ul");
       let  draggable = ui.draggable; 
       draggable.appendTo(droppable);
-
-
+      $(".tooltiptext").text("Double click to remove me!")
+      
     }
-
-    
   })
 }
 
