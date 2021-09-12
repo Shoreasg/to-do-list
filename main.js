@@ -69,7 +69,11 @@ $(() => {
     reload();
 
   }
-  submit();
 
+  submit();
+if($('ul:empty'))
+{
+  localStorage.clear();
+}
 
 })
