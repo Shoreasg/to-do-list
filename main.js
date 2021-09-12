@@ -1,7 +1,16 @@
-const toDolist = [];
+let toDolist = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
 const render = () => {
   $('#to-do-list-container').children("ul").append(`<li class="items">${toDolist[toDolist.length - 1]}<span class="tooltiptext">Drag me </span></li>`);
+  drag();
+  dropped();
+}
+
+const reload = () => {
+  toDolist.forEach((item) => {
+    $('#to-do-list-container').children("ul").append(`<li class="items">${item}<span class="tooltiptext">Drag me </span></li>`);
+  })
+
   drag();
   dropped();
 }
@@ -27,15 +36,17 @@ const dropped = () => {
       let draggable = ui.draggable;
       draggable.appendTo(droppable);
       $(".tooltiptext").text("Double click to remove me!")
+      
       clickRemove();
+
     }
   })
 }
 
 const clickRemove = () => {
   ($("#secondlist").children("li")).dblclick(function () {
-    $(this).remove();
 
+    $(this).remove();
   });
 }
 
@@ -44,6 +55,7 @@ const submit = () => {
 
     const inputValue = $('#input-box').val(); //get the input
     toDolist.push(inputValue);
+    localStorage.setItem("items", JSON.stringify(toDolist))
     e.preventDefault(); //prevent from resetting
     $(e.currentTarget).trigger('reset'); // reset after entering the to do list
     render();
@@ -53,6 +65,10 @@ const submit = () => {
 
 $(() => {
 
+  if (toDolist.length > 0) {
+    reload();
+
+  }
   submit();
 
 
