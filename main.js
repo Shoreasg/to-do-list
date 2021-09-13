@@ -29,7 +29,7 @@ const drag = () => {
 
 const dropped = () => {
   $('#completed-container').droppable({
-    tolerance: 'pointer',
+    tolerance: 'intersect',
     accept: '#firstlist .items',
     drop: function (event, ui) {
       let droppable = $(this).children("ul");
